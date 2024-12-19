@@ -105,8 +105,7 @@ dependencies {
 ```
 
 ### Compatibility
-- **Android Version**: Minimum SDK 21 (Lollipop)
-- **Jetpack Compose Version**: Compatible with Compose 1.2.0 and above.
+- **Android Version**: Minimum SDK 26 (Lollipop)
 
 ---
 
