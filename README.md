@@ -90,3 +90,105 @@ fun PreviewBottomSheet() {
 - Ensure that the `isVisible` state is correctly managed to avoid inconsistencies in UI rendering.
 
 ---
+
+# CustomDatePicker
+
+A highly customizable `CustomDatePicker` component for Jetpack Compose, allowing users to select a specific date interactively with options to tweak appearance and behavior.
+
+---
+
+## Features
+
+- **Date Selection**: Allows users to select day, month, and year.
+- **Customizable Labels**: Change labels for day, month, and year pickers.
+- **Styling Options**: Customize text styles, button designs, and layout.
+- **Real-Time Feedback**: Displays the selected date dynamically.
+- **Localization Ready**: Supports custom labels for internationalization.
+
+---
+
+## Parameters
+
+| Parameter            | Type                                      | Description                                                                                     | Default Value                      |
+|----------------------|-------------------------------------------|-------------------------------------------------------------------------------------------------|------------------------------------|
+| `initialDate`        | `LocalDate`                              | The initial date displayed in the picker.                                                      | `LocalDate.now()`                  |
+| `onDateSelected`     | `(LocalDate) -> Unit`                    | Callback triggered when the user selects a date.                                               | Required                           |
+| `modifier`           | `Modifier`                               | A modifier for the component layout.                                                           | `Modifier`                         |
+| `dayLabel`           | `String`                                 | Label for the day picker.                                                                      | `"Day"`                           |
+| `monthLabel`         | `String`                                 | Label for the month picker.                                                                    | `"Month"`                         |
+| `yearLabel`          | `String`                                 | Label for the year picker.                                                                     | `"Year"`                          |
+| `confirmButtonText`  | `String`                                 | Text for the confirm button.                                                                   | `"Confirm"`                       |
+| `textStyle`          | `TextStyle`                              | Text style for the date display and labels.                                                    | `MaterialTheme.typography.headlineSmall` |
+| `buttonStyle`        | `@Composable (Boolean, () -> Unit, ...)` | Lambda for customizing button design.                                                          | Default Button                     |
+
+---
+
+## Example Usage
+
+```kotlin
+@Composable
+fun DatePickerExample() {
+    var selectedDate by remember { mutableStateOf<LocalDate?>(null) }
+
+    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+        selectedDate?.let {
+            Text("Selected Date: $it", style = MaterialTheme.typography.bodyLarge)
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        CustomDatePicker(
+            initialDate = LocalDate.of(2023, 8, 15),
+            onDateSelected = { date ->
+                selectedDate = date
+            },
+            dayLabel = "Day",
+            monthLabel = "Month",
+            yearLabel = "Year",
+            confirmButtonText = "Set Date"
+        )
+    }
+}
+```
+
+---
+
+## Customization Options
+
+### Labels
+- Modify the `dayLabel`, `monthLabel`, and `yearLabel` parameters for custom text.
+
+### Button Design
+- Override `buttonStyle` with a lambda to provide your own button design.
+
+### Text Style
+- Use `textStyle` to customize the text appearance of the labels and date display.
+
+### Date Range
+- Restrict the selectable range by controlling `initialDate` and validation logic in `onDecrease` or `onIncrease` of the `PickerRow`.
+
+---
+
+## Implementation Details
+
+1. **State Management**: Uses `remember` to track the selected day, month, and year.
+2. **Date Calculation**: Determines valid days based on the selected month and year.
+3. **PickerRow**:
+   - A reusable composable for day, month, and year pickers.
+   - Handles button interactions for incrementing/decrementing values.
+4. **Confirm Button**: Triggers the `onDateSelected` callback with the selected date.
+
+---
+
+## Preview
+
+To preview the `CustomDatePicker`, use the following code:
+
+```kotlin
+@Preview(showBackground = true)
+@Composable
+fun PreviewDatePicker() {
+    DatePickerExample()
+}
+```
+
