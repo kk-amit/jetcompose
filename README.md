@@ -1,4 +1,3 @@
-
 # JetCompose Library
 
 **JetCompose** is a library providing a suite of custom UI components designed for Jetpack Compose applications. These components aim to simplify and accelerate the development of rich, interactive, and customizable user interfaces.
@@ -19,7 +18,8 @@
 3. [Usage](#usage)
 4. [License](#license)
 5. [Contributions](#contributions)
-6. [Previews](#previews)
+6. [Demo](#demo) 
+7. [Details Description](#details-description)
 
 ---
 
@@ -158,39 +158,16 @@ For detailed setup and contribution guidelines, refer to [CONTRIBUTING.md](CONTR
 
 ---
 
-## Previews
-Here are some visual examples of the components:
-
-### CustomToast Preview
-
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewCustomToast() {
-    ToastExample()
-}
-```
-
-### CustomDatePicker Preview
-
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewDatePicker() {
-    DatePickerExample()
-}
-```
-
----
-
 Feel free to explore and customize JetCompose to fit your application's needs. Happy Coding!
 
 
+# Demo
 
-Details Description : 
----
+<img src="/Library_Sample.gif" width="300">
 
-# Custom Bottom Sheet Component
+# Details Description
+
+## Custom Bottom Sheet Component
 
 ## Overview
 The `CustomBottomSheet` is a composable function designed to create a customizable bottom sheet component in Jetpack Compose. It supports sliding effects, drag gestures, and dismiss actions, making it a versatile UI element for displaying additional content or options to users.
@@ -236,62 +213,10 @@ fun BottomSheetExample() {
 
 ---
 
-## Implementation Details
+## CustomDatePicker
 
-### Offset Tracking
-The vertical position of the bottom sheet is managed using a `mutableFloatStateOf` variable (`offsetY`).
-
-### Gesture Detection
-`detectVerticalDragGestures` is used to enable drag gestures for sliding the bottom sheet.
-
-### UI Structure
-- A semi-transparent background covers the screen when the sheet is visible.
-- The bottom sheet is placed at the bottom of the screen and styled with rounded corners.
-
-### Dismiss Button
-A button is provided inside the bottom sheet to trigger `onDismiss` and `onDismissRequest` actions.
-
----
-
-## Customization Options
-- **Header Text**: Modify the `headerText` parameter to set a custom title.
-- **Background Color**: Use the `backgroundColor` parameter to set the desired color.
-- **Custom Content**: Pass any composable lambda to the `content` parameter to display your own UI inside the bottom sheet.
-- **Dismiss Logic**: Implement additional dismiss logic using the `onDismissRequest` parameter.
-
----
-
-## Preview
-To preview the `CustomBottomSheet`, you can use the following code snippet:
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewBottomSheet() {
-    BottomSheetExample()
-}
-```
-
----
-
-## Additional Notes
-- The bottom sheet can be further enhanced with additional parameters for more control over animations, sizes, or behaviors.
-- Ensure that the `isVisible` state is correctly managed to avoid inconsistencies in UI rendering.
-
----
-
-# CustomDatePicker
-
+## Overview
 A highly customizable `CustomDatePicker` component for Jetpack Compose, allowing users to select a specific date interactively with options to tweak appearance and behavior.
-
----
-
-## Features
-
-- **Date Selection**: Allows users to select day, month, and year.
-- **Customizable Labels**: Change labels for day, month, and year pickers.
-- **Styling Options**: Customize text styles, button designs, and layout.
-- **Real-Time Feedback**: Displays the selected date dynamically.
-- **Localization Ready**: Supports custom labels for internationalization.
 
 ---
 
@@ -341,58 +266,10 @@ fun DatePickerExample() {
 
 ---
 
-## Customization Options
+## CustomDialog
 
-### Labels
-- Modify the `dayLabel`, `monthLabel`, and `yearLabel` parameters for custom text.
-
-### Button Design
-- Override `buttonStyle` with a lambda to provide your own button design.
-
-### Text Style
-- Use `textStyle` to customize the text appearance of the labels and date display.
-
-### Date Range
-- Restrict the selectable range by controlling `initialDate` and validation logic in `onDecrease` or `onIncrease` of the `PickerRow`.
-
----
-
-## Implementation Details
-
-1. **State Management**: Uses `remember` to track the selected day, month, and year.
-2. **Date Calculation**: Determines valid days based on the selected month and year.
-3. **PickerRow**:
-   - A reusable composable for day, month, and year pickers.
-   - Handles button interactions for incrementing/decrementing values.
-4. **Confirm Button**: Triggers the `onDateSelected` callback with the selected date.
-
----
-
-## Preview
-
-To preview the `CustomDatePicker`, use the following code:
-
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewDatePicker() {
-    DatePickerExample()
-}
-```
-
-# CustomDialog
-
+## Overview
 A reusable and customizable `CustomDialog` component for Jetpack Compose that provides a simple and elegant way to display dialogs with confirm and cancel actions.
-
----
-
-## Features
-
-- **Visibility Control**: Show or hide the dialog based on a boolean flag.
-- **Customizable Content**: Modify the title, message, and button text.
-- **Action Handling**: Define callbacks for confirm and cancel actions.
-- **Styling Options**: Adjust border color, background color, and text styles.
-- **Dismiss Logic**: Option to handle additional logic on dialog dismissal.
 
 ---
 
@@ -450,63 +327,10 @@ fun DialogExample() {
 }
 ```
 
----
+## CustomProgressDialog
 
-## Customization Options
-
-### Title and Message
-- Modify the `title` and `message` parameters to change the dialog's content.
-
-### Button Text
-- Customize `confirmText` and `cancelText` for localized or contextual button labels.
-
-### Styling
-- Use `borderColor`, `backgroundColor`, `titleStyle`, and `messageStyle` to match the dialog's appearance with your app's theme.
-
-### Dismiss Logic
-- Implement `onDismissRequest` to handle additional logic when the dialog is dismissed.
-
----
-
-## Implementation Details
-
-1. **Visibility Control**: Utilizes `AnimatedVisibility` for smooth appearance and disappearance animations.
-2. **Surface and Card**:
-   - The `Surface` component wraps the dialog with a transparent background to cover the entire screen.
-   - The `Card` component provides the styled container for the dialog content.
-3. **Callbacks**:
-   - `onConfirm` and `onCancel` handle button actions.
-   - `onDismissRequest` ensures proper dismissal logic.
-4. **Responsive Layout**:
-   - The dialog is centered using a `Box` with `wrapContentSize`.
-   - Padding and spacing ensure proper alignment and readability.
-
----
-
-## Preview
-
-To preview the `CustomDialog`, use the following code:
-
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewDialog() {
-    DialogExample()
-}
-```
-
-# CustomProgressDialog
-
+## Overview
 A customizable `CustomProgressDialog` component for Jetpack Compose, designed to display a progress indicator with a message during loading states. The dialog is fully customizable in terms of background color, text, and visibility.
-
----
-
-## Features
-
-- **Progress Indicator**: Displays a circular progress indicator.
-- **Customizable Message**: Set a custom loading message.
-- **Customizable Appearance**: Adjust background color and dialog styling.
-- **Visibility Control**: Show or hide the dialog using the `isVisible` flag.
 
 ---
 
@@ -546,62 +370,10 @@ fun ProgressDialogExample() {
 }
 ```
 
----
+## CustomSnackBar
 
-## Customization Options
-
-### Loading Text
-- Use the `text` parameter to specify a custom loading message.
-
-### Background Overlay
-- Adjust the `backgroundColor` parameter to customize the overlay color and opacity.
-
-### Visibility
-- Control the dialog visibility dynamically by toggling the `isVisible` parameter.
-
-### Dismiss Action
-- Provide an `onDismiss` callback to define actions when the dialog is dismissed.
-
----
-
-## Implementation Details
-
-1. **Visibility Control**:
-   - The composable is conditionally rendered based on the `isVisible` parameter.
-2. **Circular Progress Indicator**:
-   - Displays a primary-colored progress indicator using `CircularProgressIndicator`.
-3. **Surface Styling**:
-   - Uses Material3's `Surface` with elevation for better dialog appearance.
-4. **Overlay**:
-   - Semi-transparent overlay background for focus on the dialog.
-
----
-
-## Preview
-
-To preview the `CustomProgressDialog`, use the following code:
-
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewProgressDialog() {
-    ProgressDialogExample()
-}
-```
-
-# CustomSnackBar
-
-A customizable `CustomSnackBar` component for Jetpack Compose, allowing users to display transient messages with optional action buttons.
-
----
-
-## Features
-
-- **Message Display**: Displays a message at the bottom of the screen.
-- **Action Button**: Includes an optional action button with customizable text and behavior.
-- **Customizable Design**: Modify text, colors, font size, and layout.
-- **Automatic Dismissal**: Dismisses itself after a specified duration.
-- **Theme Integration**: Leverages Material3 themes for seamless integration.
+## Overview
+A customizable `CustomSnackBar` component for Jetpack Compose, allowing users to display transient messages with optional action buttons. Use this component to display lightweight feedback or messages with action buttons in your Compose app!
 
 ---
 
@@ -656,59 +428,10 @@ fun SnackBarWithActionExample() {
 }
 ```
 
----
+## CustomTimePicker
 
-## Customization Options
-
-### Text Appearance
-- Adjust `textColor` and `fontSize` for the message and action button text.
-
-### Colors
-- Change `backgroundColor`, `borderColor`, and `actionButtonColors` to match your app's theme.
-
-### Duration
-- Use predefined `Toast.LENGTH_SHORT`, `Toast.LENGTH_LONG`, or custom durations in milliseconds for the `duration` parameter.
-
-### Action Button
-- Include an action button with the `actionText` and `onActionClick` parameters.
-
----
-
-## Implementation Details
-
-1. **Animated Visibility**: Snackbar appears with animation for a smoother user experience.
-2. **Custom Timing**: Snackbar auto-dismisses after the specified duration using `LaunchedEffect` and `delay`.
-3. **Action Button**: Optional button allows users to perform an action before dismissal.
-4. **Material3 Styling**: Utilizes Material3's theming for buttons and colors.
-
----
-
-## Preview
-
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewSnackBar() {
-    SnackBarWithActionExample()
-}
-```
-
-Use this component to display lightweight feedback or messages with action buttons in your Compose app!
-
-
-# CustomTimePicker
-
+## Overview
 A highly flexible `CustomTimePicker` composable for Jetpack Compose, enabling users to select a specific time interactively with customizable options for 24-hour or 12-hour formats.
-
----
-
-## Features
-
-- **Time Selection**: Users can select hours and minutes with interactive buttons.
-- **AM/PM Toggle**: Supports 12-hour format with AM/PM switching.
-- **24-Hour Format**: Easily switch to 24-hour time format.
-- **Real-Time Display**: Shows the selected time dynamically.
-- **Customizable Appearance**: Modify text, colors, and layout to match your theme.
 
 ---
 
@@ -757,58 +480,10 @@ fun TimePickerExample() {
 }
 ```
 
----
+## CustomToast
 
-## Customization Options
-
-### Time Format
-- Use the `is24HourFormat` parameter to switch between 24-hour and 12-hour time formats.
-
-### Initial Time
-- Set the `initialHour` and `initialMinute` parameters to define the default time.
-
-### Callback
-- The `onTimeSelected` callback provides the final hour, minute, and AM/PM status (if applicable) when the confirm button is pressed.
-
----
-
-## Implementation Details
-
-1. **State Management**: Utilizes `remember` to maintain selected hour, minute, and AM/PM state.
-2. **Time Format Handling**:
-   - Adjusts hour range based on the selected format.
-   - Converts 12-hour time to 24-hour format when confirming the selection.
-3. **Dynamic UI**:
-   - Provides real-time updates to the displayed time.
-   - Includes buttons for incrementing and decrementing hours and minutes.
-4. **AM/PM Toggle**: Active in 12-hour format for toggling between AM and PM.
-
----
-
-## Preview
-
-To preview the `CustomTimePicker`, use the following code:
-
-```kotlin
-@Preview
-@Composable
-fun PreviewTimePicker() {
-    TimePickerExample()
-}
-```
-
-# CustomToast
-
+## Overview
 `CustomToast` is a composable for displaying a customizable toast message in Jetpack Compose. It offers control over the appearance, duration, and dismissal behavior, making it versatile for different use cases.
-
----
-
-## Features
-
-- **Customizable Appearance**: Change text color, background color, and font size.
-- **Animated Visibility**: Smooth fade-in and fade-out transitions for the toast.
-- **Flexible Duration**: Predefined short and long durations or custom time.
-- **Dismiss Callback**: Trigger actions after the toast disappears.
 
 ---
 
@@ -850,52 +525,3 @@ fun ToastExample() {
     }
 }
 ```
-
----
-
-## Customization Options
-
-### Duration
-- Use `Toast.LENGTH_SHORT` (default: 1.5 seconds) or `Toast.LENGTH_LONG` (default: 3.5 seconds).
-- Specify a custom duration in milliseconds.
-
-### Text Appearance
-- Modify `textColor` to change the color of the text.
-- Adjust `fontSize` for the desired text size.
-
-### Background
-- Change `backgroundColor` to fit the app's theme.
-
-### Dismiss Callback
-- Implement logic in `onDismiss` to handle actions after the toast disappears.
-
----
-
-## Implementation Details
-
-1. **State Management**:
-   - Uses `remember` and `mutableStateOf` to manage the visibility of the toast.
-
-2. **Animated Visibility**:
-   - Fades the toast in and out using `fadeIn()` and `fadeOut()` animations.
-
-3. **Auto Dismissal**:
-   - Automatically hides the toast after the specified duration using `LaunchedEffect` and `delay`.
-
-4. **Toast Layout**:
-   - Styled using a `Box` with padding, rounded corners, and shadow for a polished appearance.
-
----
-
-## Preview
-
-To preview the `CustomToast`, use the following code:
-
-```kotlin
-@Preview(showBackground = true)
-@Composable
-fun PreviewCustomToast() {
-    ToastExample()
-}
-```
-
