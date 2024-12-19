@@ -112,7 +112,7 @@ Add the dependency to your project's `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'implementation 'com.github.kk-amit:jetcompose:1.0.1''
+    implementation 'com.github.kk-amit:jetcompose:1.0.1'
 }
 ```
 
