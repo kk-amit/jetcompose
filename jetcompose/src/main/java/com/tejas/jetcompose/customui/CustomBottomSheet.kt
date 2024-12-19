@@ -31,17 +31,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-/**
- * A customizable bottom sheet component with a sliding effect, drag gestures, a dismiss button,
- * and custom content.
- *
- * @param isVisible Boolean flag to control the visibility of the bottom sheet.
- * @param content A Composable lambda function to display custom content inside the bottom sheet.
- * @param onDismiss Lambda function to handle actions when the bottom sheet is dismissed (e.g., closing the bottom sheet).
- * @param backgroundColor Background color of the bottom sheet. Defaults to the surface color from MaterialTheme.
- * @param headerText The title text shown at the top of the bottom sheet. Defaults to "Bottom Sheet Title".
- * @param onDismissRequest Optional lambda to handle additional dismiss logic (default is empty).
- */
 @SuppressLint("UseOfNonLambdaOffsetOverload")
 @Composable
 fun CustomBottomSheet(

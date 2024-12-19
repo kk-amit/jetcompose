@@ -92,20 +92,6 @@ fun CustomToast(
     }
 }
 
-// Preview function to show how the CustomToast looks with sample data.
-@Composable
-fun CustomToastPreview() {
-    CustomToast(
-        message = "This is a custom toast message!", // Sample message to be shown.
-        duration = Toast.LENGTH_SHORT, // Show the toast for the short duration (1.5 seconds).
-        textColor = Color.White, // Text color of the toast (white).
-        backgroundColor = Color.Black, // Background color of the toast (black).
-        fontSize = 18.sp, // Font size of 18.sp to make the message slightly larger.
-        onDismiss = { println("Toast dismissed!") } // Print a log when the toast is dismissed.
-    )
-}
-
-
 
 
 

@@ -165,9 +165,3 @@ fun TimePickerScreen() {
         }
     }
 }
-
-@Preview
-@Composable
-fun showTimePickerScreen() {
-    TimePickerScreen()
-}
