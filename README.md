@@ -18,7 +18,8 @@
 3. [Usage](#usage)
 4. [License](#license)
 5. [Contributions](#contributions)
-6. [Details Description](#details-description)
+6. [Demo](#demo) 
+7. [Details Description](#details-description)
 
 ---
 
@@ -160,6 +161,9 @@ For detailed setup and contribution guidelines, refer to [CONTRIBUTING.md](CONTR
 Feel free to explore and customize JetCompose to fit your application's needs. Happy Coding!
 
 
+# Demo
+
+<img src="/Library_Sample.gif" width="300">
 
 # Details Description
 
