@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "JetCompose"
 include(":app")
- 
+include(":jetcompose")
