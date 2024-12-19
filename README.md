@@ -96,11 +96,23 @@ An intuitive time picker for selecting hours and minutes with support for 12-hou
 ---
 
 ## Installation
+Add it in your root build.gradle at the end of repositories:
+
+```groovy
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
 Add the dependency to your project's `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'com.tejas.jetcompose:library:1.0.0'
+    implementation 'implementation 'com.github.kk-amit:jetcompose:1.0.1''
 }
 ```
 
@@ -111,6 +123,8 @@ dependencies {
 
 ## Usage
 Refer to the documentation for each component for detailed usage instructions and examples.
+https://github.com/kk-amit/jetcompose/blob/main/app/src/main/java/com/tejas/jetpackcustomui/MainActivity.kt
+
 
 ### Quick Start Example
 Below is a simple example demonstrating the usage of the `CustomBottomSheet` component:
