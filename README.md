@@ -117,7 +117,7 @@ dependencies {
 ```
 
 ### Compatibility
-- **Android Version**: Minimum SDK 26 (Lollipop)
+- **Android Version**: Minimum SDK 26 (Oreo)
 
 ---
 
