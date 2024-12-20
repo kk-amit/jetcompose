@@ -1,3 +1,8 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Demo](https://img.shields.io/badge/Jetcompose-Demo-brightgreen.svg)](https://github.com/kk-amit/jetcompose/blob/main/Library_Sample.gif)
+[![](https://jitpack.io/v/kk-amit/jetcompose.svg)](https://jitpack.io/#kk-amit/jetcompose)
+[![Linkedin](https://img.shields.io/badge/Connect-LinkedIn-brightgreen.svg?style=flat)](https://www.linkedin.com/in/amit-srivastava-667b1330/)
+
 # JetCompose Library
 
 **JetCompose** is a library providing a suite of custom UI components designed for Jetpack Compose applications. These components aim to simplify and accelerate the development of rich, interactive, and customizable user interfaces.
